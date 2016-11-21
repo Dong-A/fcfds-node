@@ -8,7 +8,7 @@ var app = http.createServer(function(request, response){
 
 	router.home(request, response);
 	router.about(request, response);
-	router.detail(request, response);
+	router.facamp(request, response);
 
 
 }).listen(process.env.PORT || 3030);

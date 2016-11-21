@@ -11,22 +11,24 @@ function home(request, response) {
 }
 
 function about(request, response) {
-	if(request.rul === '/about') {
+	if(request.url === '/about') {
 		fs.readFile("./layout/about.html", function(err, data) {
 			response.write(data);
 			response.end();
-		})
+		});
 	}
 }
 
-function detail(request, response) {
-	var detailId = request.url.replace("/", "");
-	if (detailId.length > 0) {
-		response.write(detailId);
-		response.end();
-	}	
+function facamp(request, response) {
+	if(request.url === '/facamp') {
+		fs.readFile("./layout/facamp.html", function(err, data) {
+			response.write(data);
+			response.end();
+		});
+	}
 }
+
 
 module.exports.home = home;
 module.exports.about = about;
-module.exports.detail = detail;
+module.exports.facamp = facamp;
