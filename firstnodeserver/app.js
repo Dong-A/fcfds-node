@@ -1,19 +1,15 @@
 var http = require('http');
 
+var router = require('./router');
+
 
 var app = http.createServer(function(request, response){
 	console.log(request.url);
 
-	if (request.url === "/") {
-		response.write("This is HOME!!!");
-		response.end();
-	}
+	router.home(request, response);
+	router.about(request, response);
+	router.detail(request, response);
 
-	var detailId = request.url.replace("/", "");
-	if (detailId > 0) {
-		response.write(detailId);
-		response.end();
-	}
 
 }).listen(process.env.PORT || 3030);
 
