@@ -1,13 +1,14 @@
 var express = require('express');
 var app = express();
 
+var indexRouter = require("./routes/main")(app);
+var aboutRouter = require("./routes/about")(app);
 
 app.set("port", process.env.PORT || 8080);
+app.set("views", __dirname + "/views");
+app.set("view engines", "ejs");
+app.engine("html", require("ejs").renderFile);
 
-app.get('/', function(req, res) {
-  res.type("text/plain");
-  res.send("Hellow Express!");
-});
 
 app.use(function(req, res){
   res.type("text/palin");
