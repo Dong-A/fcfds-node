@@ -4,7 +4,7 @@ var app = express();
 var indexRouter = require("./routes/index.js")(app);
 var aboutRouter = require("./routes/about.js")(app);
 var usersRouter = require("./routes/users.js")(app);
-
+var chatRouter = require("./routes/chat.js")(app);
 
 app.set('port', process.env.PORT || 3030);
 // views for rendering
